@@ -15,12 +15,12 @@ class BacenTests extends ChallengeShoppingApiApplicationTests {
     private Bacen bacen;
 
     @Test
-    void mustBeReturn200() {
+    void mustBeReturnHttpStatus200() {
         Assertions.assertEquals(HttpStatus.OK, bacen.getStatus().getStatusCode());
     }
 
     @Test
-    void mustBeReturnEmptyList() {
+    void mustBeReturnEmptyListOfTaxesInPeriod() {
         Assertions.assertEquals(Collections.emptyList(),
                 bacen.getSelicTaxesInPeriod(
                 LocalDate.of(1500, 10, 29),
